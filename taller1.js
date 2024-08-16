@@ -44,31 +44,19 @@ function mejorParidad(numero) {
 
 //punto 4 
 
-function peorParidad() {
-    for (let i = 1; i <= 10; i++) {
-        if(i==1){
-            console.log(`El número ${i} es impar `);
-        }else if(i==2){
-            console.log(`El número ${i} es par `);
-        }else if(i==3){
-            console.log(`El número ${i} es impar `);
-        }else if(i==4){
-            console.log(`El número ${i} es par `);
-        }else if(i==5){
-            console.log(`El número ${i} es impar `);
-        }else if(i==6){
-            console.log(`El número ${i} es par `);
-        }else if(i==7){
-            console.log(`El número ${i} es impar `);
-        }else if(i==8){
-            console.log(`El número ${i} es par `);
-        }else if(i==9){
-            console.log(`El número ${i} es impar `);
-        }else if(i==10){
-            console.log(`El número ${i} es par `);
-        }
-    }
-    
+// Esta funcion cuanta con un para que va a contar desde 0 hasta llegar al numero que se ingrese y cuando ya el contador
+// sea igual al numero ingresado ahí entra a un if que con un modulo determina si este es par o impar.
+function peorParidad(num) {
+  let result = "";
+  for (let i = 0; i <= num; i++) {
+      if (i === num) {
+          if (num % 2 === 0) {
+              result = "par";
+          } else {
+              result = "impar";
+          }
+      }
   }
-  
-  peorParidad();
+  return result;
+}
+console.log(peorParidad(5));
