@@ -49,30 +49,31 @@ function includes(numeros, a) {
 function missingNumbers(numbers) {
 
 
-  const sortedNumbers = numbers.sort((a, b) => a - b);
-  const min = sortedNumbers[0];
-  const max = sortedNumbers[sortedNumbers.length - 1];
-
-  const missing = [];
-  for (let i = min + 1; i < max; i++) {
-    let found = false;
-    for (const num of numbers) {
-      if (num === i) {
-        found = true;
-        break;
+    const ordenados = numbers.sort((a, b) => a - b);
+    const min = ordenados[0];
+    const max = ordenados[ordenados.length - 1];
+  
+    const missing = [];
+    for (let i = min + 1; i < max; i++) {
+      let found = false;
+      for (const num of numbers) {
+        if (num === i) {
+          found = true;
+          break;
+        }
+      }
+      if (!found) {
+        missing.push(i);
       }
     }
-    if (!found) {
-      missing.push(i);
-    }
+  
+    return missing;
   }
+  
+  // Ejemplo de uso:
+  const listaNumeros = [7,2,4,6,3,9];
+  const numerosFaltantes = missingNumbers(listaNumeros);
 
-  return missing;
-}
-
-// Ejemplo de uso:
-const listaNumeros = [7,2,4,6,3,9];
-const numerosFaltantes = missingNumbers(listaNumeros);
 
 
 
