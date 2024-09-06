@@ -31,3 +31,20 @@ function twoSum(nums, target) {
     return result [0]; // Retorna solo la primera pareja encontrada
   }
 
+
+// PUNTO 3 
+
+function conversionRomana(romano) {
+    const valores = { 'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000 };
+
+    return romano.split('').reduce((total, actual, i, arr) => {
+        const valorActual = valores[actual];
+        const valorSiguiente = valores[arr[i + 1]];
+
+        if (valorSiguiente > valorActual) {
+            return total - valorActual;
+        } else {
+            return total + valorActual;
+        }
+    }, 0);
+}
