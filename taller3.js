@@ -1,4 +1,4 @@
-#PUNTO 1
+//PUNTO 1
 
 function desglosarString(str, tipo) {
     const vocales = 'aeiouAEIOU';
@@ -17,5 +17,17 @@ function desglosarString(str, tipo) {
 }
 
 
-#PUNTO 2 
+//PUNTO 2 
+
+function twoSum(nums, target) {
+    const indices = nums.map((num, i) => ({num,i}));
+  
+    const result = indices.flatMap(({num,i}) =>indices.filter(({num: n,i: j}) => i !== j && num + n === target).map(({i: j}) => [i, j]));
+  
+    if (result.length === 0) {
+      throw new Error('No se encontraron dos números que sumen el objetivo.');
+    }
+  
+    return result [0]; // Retorna solo la primera pareja encontrada
+  }
 
