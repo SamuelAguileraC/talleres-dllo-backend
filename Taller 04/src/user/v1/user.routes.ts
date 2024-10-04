@@ -1,8 +1,6 @@
 import { Router, Request, Response } from "express";
 import { readUsers, readUsersByHobby, userExists, getTeamExperience, getUsersByFaction, createUser } from "./user.controller";
 
-
-
 // INIT ROUTES
 const userRoutes = Router();
 
@@ -89,7 +87,7 @@ userRoutes.get("/hobby", GetUsersByHobby);
 userRoutes.get("/exists", CheckUserExists);
 userRoutes.get("/team-experience", GetTeamExperience);
 userRoutes.get("/by-faction", GetUsersByFaction);
-userRoutes.post("/", RegisterUser);  
+userRoutes.post("/", RegisterUser);
 
 // EXPORT ROUTES
 export default userRoutes;
